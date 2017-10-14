@@ -10,7 +10,7 @@ public class Main {
             }
         }
 
-        
+
     }
 
     private static void printUsage() {
