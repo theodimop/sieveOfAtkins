@@ -22,8 +22,7 @@ public class Main {
             List<Integer> primes = PrimeFactory.findPrimes(N);
             Long elapsed = System.currentTimeMillis() - start;
             System.out.println("Generated "+primes.size() + " primes in " + elapsed + " ms.");
-
-            System.out.println(primes.get(primes.size() -1));
+            
             printPrimeMultiplicationTable(primes);
 
         } catch (NumberFormatException e) {
