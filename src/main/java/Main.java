@@ -24,7 +24,7 @@ public class Main {
             System.out.println("Generated "+primes.size() + " primes in " + elapsed + " ms.");
 
             System.out.println(primes.get(primes.size() -1));
-         //   printPrimeMultiplicationTable(primes);
+            printPrimeMultiplicationTable(primes);
 
         } catch (NumberFormatException e) {
             printUsage();
