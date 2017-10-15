@@ -83,8 +83,10 @@ class PrimeFactory {
             return 10000000;
         } else if (n < 5761455)
             return 100000000;
-        else
+        else if (n < 53326267)
             return 1000000000;
+        else
+            return 1024*1024*1024;
     }
 }
 

@@ -13,7 +13,7 @@ public class Main {
         int N = -1;
         //argument and integrity constraints check
         try {
-            if (args.length < 1 || (N = Integer.parseInt(args[0])) < 0) {
+            if (args.length < 1 || (N = Integer.parseInt(args[0])) < 0 || N > 59971288) {
                 printUsage();
                 System.exit(0);
             }
@@ -23,7 +23,8 @@ public class Main {
             Long elapsed = System.currentTimeMillis() - start;
             System.out.println("Generated "+primes.size() + " primes in " + elapsed + " ms.");
 
-            printPrimeMultiplicationTable(primes);
+            System.out.println(primes.get(primes.size() -1));
+         //   printPrimeMultiplicationTable(primes);
 
         } catch (NumberFormatException e) {
             printUsage();
@@ -55,7 +56,8 @@ public class Main {
 
     private static void printUsage() {
         System.err.println("Usage: program parameter1. \n" +
-                "Parameter1 should be a positive integer.");
+                "Parameter1 should be a positive integer.\n" +
+                "Application can generate up to 59971288 primes.");
     }
 
 
