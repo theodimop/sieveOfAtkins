@@ -6,10 +6,10 @@ import java.util.stream.IntStream;
  */
 public class Main {
     public static void main(String[] args) {
-       start(args);
+        start(args);
     }
 
-    public static void start(String[] args) {
+    private static void start(String[] args) {
         int N = -1;
         //argument and integrity constraints check
         try {
@@ -20,7 +20,6 @@ public class Main {
 
             List<Integer> primes = PrimeFactory.findPrimes(N);
             printPrimeMultiplicationTable(primes);
-//            System.out.println(primes.size());
 
         } catch (NumberFormatException e) {
             printUsage();

@@ -48,7 +48,7 @@ public class PrimesTest {
 
     }
 
-    //Not efficient check keep parameter low ...
+    //Not efficient check. Keep the parameter low ...
     private boolean isPrime(int num) {
         if (num < 2) return false;
         if (num == 2) return true;
