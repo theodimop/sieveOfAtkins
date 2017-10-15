@@ -18,7 +18,11 @@ public class Main {
                 System.exit(0);
             }
 
+            Long start = System.currentTimeMillis();
             List<Integer> primes = PrimeFactory.findPrimes(N);
+            Long elapsed = System.currentTimeMillis() - start;
+            System.out.println("Generated "+primes.size() + " primes in " + elapsed + " ms.");
+
             printPrimeMultiplicationTable(primes);
 
         } catch (NumberFormatException e) {
@@ -41,7 +45,7 @@ public class Main {
 
         System.out.format("%s%" + format + "s%s", "|", " ", "|");
         IntStream.range(0, primes.size()).forEach(i -> System.out.format("%" + format + "d%s", primes.get(i), "|"));
-        System.out.println();
+        System.out.format("\n");
         IntStream.range(0, primes.size()).forEach(i -> {
             System.out.format("%s%" + format + "d", "|", primes.get(i));
             primes.forEach(p -> System.out.format("%s%" + format + "d", "|", primes.get(i) * p));
