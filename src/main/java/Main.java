@@ -6,8 +6,11 @@ import java.util.stream.IntStream;
  */
 public class Main {
     public static void main(String[] args) {
-        int N = -1;
+       start(args);
+    }
 
+    public static void start(String[] args) {
+        int N = -1;
         //argument and integrity constraints check
         try {
             if (args.length < 1 || (N = Integer.parseInt(args[0])) < 0) {
@@ -21,7 +24,7 @@ public class Main {
 
         } catch (NumberFormatException e) {
             printUsage();
-            System.exit(0);
+            System.exit(-1);
 
         } catch (OutOfMemoryError e) {
             int MB = 1024 * 1024;
@@ -30,8 +33,8 @@ public class Main {
             System.err.println("You can allocate more memory by executing with option e.g: -Xmx256m ");
             System.err.println("Currently you allocate " + runtime.totalMemory() / MB + " MB. Try to increase this" +
                     "number to " + 2 * runtime.maxMemory() / MB + " MB.");
+            System.exit(-2);
         }
-
     }
 
     private static void printPrimeMultiplicationTable(List<Integer> primes) {

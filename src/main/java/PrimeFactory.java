@@ -1,12 +1,11 @@
-import java.util.*;
-import java.util.stream.IntStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by dj_di_000 on 14/10/2017.
+ * Created by theo dimopoulos on 14/10/2017.
+ * dimopoulosth.td@gmail.com
  */
-public class PrimeFactory {
-    private int N;
-
+class PrimeFactory {
 
     /**
      * Find primes with Sieve of Atkins algorithm.
@@ -16,6 +15,9 @@ public class PrimeFactory {
      * @return List with primes inside [0,arrayLength]
      */
     public static List<Integer> findPrimes(int numberOfPrimes) {
+        if(numberOfPrimes < 2)
+            return new ArrayList<>();
+
         int arrayLength = getNumberInterval(numberOfPrimes);
         boolean[] isPrime = new boolean[arrayLength + 1];
         double sqrt = Math.sqrt(arrayLength);
@@ -68,7 +70,7 @@ public class PrimeFactory {
         return primes;
     }
 
-    public static int getNumberInterval(int n) {
+    private static int getNumberInterval(int n) {
         if (n < 168) {
             return 1000;
         } else if (n < 1229) {
@@ -83,7 +85,6 @@ public class PrimeFactory {
             return 100000000;
         else
             return 1000000000;
-
     }
 }
 
