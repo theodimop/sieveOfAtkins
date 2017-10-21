@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -15,8 +17,9 @@ class PrimeFactory {
      * @return List with primes inside [0,arrayLength]
      */
     public static List<Integer> findPrimes(int numberOfPrimes) {
-        if(numberOfPrimes < 2)
-            return new ArrayList<>();
+        if (numberOfPrimes < 2)
+            return Collections.singletonList(2);
+
 
         int arrayLength = getNumberInterval(numberOfPrimes);
         boolean[] isPrime = new boolean[arrayLength + 1];
@@ -86,7 +89,7 @@ class PrimeFactory {
         else if (n < 53326267)
             return 1000000000;
         else
-            return 1024*1024*1024;
+            return 1024 * 1024 * 1024;
     }
 }
 

@@ -13,7 +13,7 @@ public class Main {
         int N = -1;
         //argument and integrity constraints check
         try {
-            if (args.length < 1 || (N = Integer.parseInt(args[0])) < 0 || N > 59971288) {
+            if (args.length < 1 || (N = Integer.parseInt(args[0])) < 1 || N > 59971288) {
                 printUsage();
                 System.exit(0);
             }
